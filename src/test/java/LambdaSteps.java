@@ -28,5 +28,6 @@ public class LambdaSteps extends TestBase {
         step("Проверяем наличие Issue с номером #4", () -> {
             $x("//li[contains(@aria-label, '#4')]").should(Condition.exist);
         });
+
     }
 }
