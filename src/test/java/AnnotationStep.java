@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class AnnotationStep {
 
     @Step("Открываем профиль")
-    public void openPage (){
+    public void openPage() {
         open("https://github.com/DefRoga");
     }
 
@@ -17,17 +17,17 @@ public class AnnotationStep {
     }
 
     @Step("Открываем репозиторий {repository}")
-    public void clickRepo (String repository) {
-        $x("//a[normalize-space(text())='"+ repository + "' and @href]").click();
+    public void clickRepo(String repository) {
+        $x("//a[normalize-space(text())='" + repository + "' and @href]").click();
     }
 
     @Step("Переходим в раздел Issue")
-    public void openIssueTab () {
+    public void openIssueTab() {
         $x("//a[@id = 'issues-tab']").click();
     }
 
     @Step("Проверяем наличие Issue с номером #{issueNumber}}")
-    public void checkIssueNumber (int issueNumber) {
+    public void checkIssueNumber(int issueNumber) {
         $x("//li[contains(@aria-label, '#" + issueNumber + "')]").should(Condition.exist);
     }
 }
