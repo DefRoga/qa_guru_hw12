@@ -11,7 +11,7 @@ public class LambdaSteps extends TestBase {
     private static final String repository = "PracticeForm";
 
     @Test
-    public void lambdaStepTest(){
+    public void lambdaStepTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Открываем профиль", () -> {
@@ -20,7 +20,7 @@ public class LambdaSteps extends TestBase {
 
         step("Открываем репозиторий " + repository, () -> {
             $x("//a[@href = '/DefRoga?tab=repositories']").click();
-            $x("//a[normalize-space(text())='"+ repository + "' and @href]").click();
+            $x("//a[normalize-space(text())='" + repository + "' and @href]").click();
         });
 
         step("Переходим в раздел Issue", () -> {
@@ -34,7 +34,7 @@ public class LambdaSteps extends TestBase {
     }
 
     @Test
-    public void annotationStepsTest () {
+    public void annotationStepsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotationStep steps = new AnnotationStep();
 
