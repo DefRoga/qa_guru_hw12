@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -11,6 +13,11 @@ public class LambdaSteps extends TestBase {
     private static final String repository = "PracticeForm";
 
     @Test
+    @DisplayName("Проверка кнопки Issue в репозитории")
+    @Feature("Issue в репозитории")
+    @Story("Создание Issue в репозитории")
+    @Owner("Roman Bragin")
+    @Severity(SeverityLevel.NORMAL)
     public void lambdaStepTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -34,6 +41,11 @@ public class LambdaSteps extends TestBase {
     }
 
     @Test
+    @DisplayName("Проверка кнопки Issue в репозитории")
+    @Feature("Issue в репозитории")
+    @Story("Создание Issue в репозитории")
+    @Owner("Roman Bragin")
+    @Severity(SeverityLevel.NORMAL)
     public void annotationStepsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         AnnotationStep steps = new AnnotationStep();
